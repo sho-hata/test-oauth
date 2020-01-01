@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load socialaccount %}
+{% load account %}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>testprovider</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+  ようこそ {% user_display user %}さん<br />
+  {% for sa in user.socialaccount_set.all %}
+    {{ sa.extra_data }}<br />
+  {% endfor %}
+{% else %}
+  <a href="{% provider_login_url "testprovider" %}">
+      Test Provider でログイン
+  </a>
+{% endif %}
+</body>
+</html>
