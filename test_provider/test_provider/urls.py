@@ -5,7 +5,7 @@ from .views import profile_view, top_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('oauth/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('', top_view),
     path('accounts/', include('django.contrib.auth.urls')),
     path('api/profile/', profile_view, name='profile'),
