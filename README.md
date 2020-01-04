@@ -3,7 +3,8 @@
 Django OAuth 2 Test
 
 ```
-$ pipenv --python 3.8
+$ pipenv install
+$ pipenv shell
 ```
 ## Provider
 
